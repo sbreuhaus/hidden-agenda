@@ -14,7 +14,6 @@ const Main = React.createClass({
       </div>
       <div className="main-container">
         <Nav />
-
         {this.props.children}
       </div>
       </div>
