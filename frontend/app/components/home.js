@@ -1,19 +1,19 @@
 import React from 'react';
 import {Link} from 'react-router';
+import ajaxHelpers from '../utils/ajaxHelpers';
 // import SearchName from './SearchName';
 
 // import Filters from './Filters';
 
 import axios from 'axios';
-import Nav from './Nav';
+import DisplayResults from './DisplayResults';
 // require('../utilities/Main.css');
 
-var url = 'http://localhost:3000/';
+// var flickurl = 'https://api.flickr.com/services/rest/?format=json&nojsoncallback=1&method=flickr.photos.search&api_key=021e9c0509d04ce2b687da4affd991d6&sort=interestingness-desc&group_id=41425956%40N00&tags=barcelona/';
 
 const Home = React.createClass({
   clickConfirm: function(){
     console.log('this worked!')
-
   },
 
   getIntitialState: function() {
@@ -38,26 +38,22 @@ const Home = React.createClass({
   if (this.state.searchName) {
     travelSearch.name = this.state.searchName;
   }
+},
 
-axios.get(url)
-.then(function(response){
-  console.log("getting searched result", response.data)
-  this.setState({
-        ajaxReturn: response.data
-      });
-    }.bind(this))
-    .catch(function(err){
-      console.log('Error:', err);
-      return err;
-    })
-  },
+
+componentDidMount: function() {
+  ajaxHelpers.getResults().then(function(response){
+    console.log(response);
+    this.setState({
+      ajaxReturn: response.data.photos.photo
+    });
+  }.bind(this));
+},
 
 render: function(){
   return(
     <div>
-    
-
-
+      <DisplayResults photos={this.state.ajaxReturn} />
     </div>
     )
   }
