@@ -1,17 +1,17 @@
 import axios from 'axios';
-import ajaxHelpers from '../utils/ajaxHelpers';
+import ajaxHelpersAuth from '../utils/ajaxHelpersAuth';
 
 module.exports = {
-  login(user_id, password, afterLoginFxn) {
+  login(email, password, afterLoginFxn) {
     if (this.loggedIn()) {
       if (afterLoginFxn) {
         afterLoginFxn(true);
       }
       return;
     }
-    // we are not logged in, make login api call with user_id & passowrd
-    axios.post(ajaxHelpers.baseUrl + '/auth/sign_in', {
-      user_id: user_id,
+    // we are not logged in, make login api call with email & passowrd
+    axios.post(ajaxHelpersAuth.baseUrl + '/auth/sign_in', {
+      email: email,
       password: password
     })
     .then(function (response) {
@@ -34,7 +34,7 @@ module.exports = {
     });
   },
 
-  signup(user_id, password, password_confirmation, afterSignupFxn) {
+  signup(email, password, password_confirmation, afterSignupFxn) {
     if (this.loggedIn()) {
       //we are already logged in
       if (afterSignupFxn) {
@@ -42,8 +42,8 @@ module.exports = {
       }
       return;
     }
-    axios.post(ajaxHelpers.baseUrl + '/auth/', {
-      user_id: user_id,
+    axios.post(ajaxHelpersAuth.baseUrl + '/auth/', {
+      email: email,
       password: password,
       password_confirmation: password
     })
@@ -73,7 +73,7 @@ module.exports = {
     const accessToken = localStorage.accessToken;
     const client = localStorage.client;
 
-    axios.delete(ajaxHelpers.baseUrl + '/auth/sign_out', {
+    axios.delete(ajaxHelpersAuth.baseUrl + '/auth/sign_out', {
       headers: {
         'uid': uid,
         'access-token': accessToken,

@@ -7,6 +7,7 @@ const Main = React.createClass({
       <div>
       <div className="main-container">
         <Nav />
+        <br/>
         {this.props.children}
       </div>
 
