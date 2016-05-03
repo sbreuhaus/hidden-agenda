@@ -1,6 +1,5 @@
 import React from 'react';
 import Nav from './Nav';
-import LandingPage from './LandingPage';
 
 
 const Main = React.createClass({
@@ -9,13 +8,12 @@ const Main = React.createClass({
 
     return (
       <div>
-      <div className="LandingPage">
-        <LandingPage />
-      </div>
       <div className="main-container">
         <Nav />
+        <br/>
         {this.props.children}
       </div>
+
       </div>
     );
   }
