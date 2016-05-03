@@ -10,18 +10,21 @@ const Nav = React.createClass({
     return(
       <div className='cssmenu'>
         <h1>Hidden Agenda</h1>
-        <ul>
+<div className='menu'>
+      <ul>
          <Link to="/About"><li><span>About</span></li></Link>
          <Link to="/SignUp"><li><span>Sign up</span></li></Link>
          <li className='last'><a href='mailto:hiddenagendawdi@yahoo.com'><span>Contact us</span></a></li>
          <li>
-           <div>
+           <div className='useridinput'>
+
               <input placeholder='user id' name='user id' onChange={ e => this.setState({user_id: e.target.value})}/>
               <input placeholder='password' type='password' name='password' onChange={ e => this.setState({password: e.target.value})}/>
               <button onClink={ () => this.handleLog() }>Submit</button>
             </div>
           </li>
         </ul>
+        </div>
       </div>
     );
   }
