@@ -12,6 +12,8 @@ import DisplayResults from './DisplayResults';
 // var flickurl = 'https://api.flickr.com/services/rest/?format=json&nojsoncallback=1&method=flickr.photos.search&api_key=021e9c0509d04ce2b687da4affd991d6&sort=interestingness-desc&group_id=41425956%40N00&tags=barcelona/';
 
 const Home = React.createClass({
+
+
   clickConfirm: function(){
     console.log('this worked!')
   },
@@ -53,7 +55,11 @@ componentDidMount: function() {
 render: function(){
   return(
     <div>
+
+      <MapGS />
+
       <DisplayResults photos={this.state.ajaxReturn} />
+
     </div>
     )
   }
