@@ -29,7 +29,7 @@ const MapGS = React.createClass({
     }).addTo(Window.map);
 
 
-    })
+      })
     },
     render: function() {
 
@@ -55,8 +55,6 @@ const MapGS = React.createClass({
     // };
 
     return(
-
-
         <div id='map' style={mapStyle}>
           {this.handleMapDisplay()}
         </div>
