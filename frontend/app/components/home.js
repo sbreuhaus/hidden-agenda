@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
+import MapGS from './Map';
+
 // import SearchName from './SearchName';
 
 // import Filters from './Filters';
@@ -55,9 +57,7 @@ axios.get(url)
 render: function(){
   return(
     <div>
-    
-
-
+      <MapGS />
     </div>
     )
   }
