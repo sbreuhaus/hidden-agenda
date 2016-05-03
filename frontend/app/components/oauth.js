@@ -15,7 +15,7 @@ module.exports = {
       password: password
     })
     .then(function (response) {
-      console.log("sign_in", resonse)
+      console.log("sign_in:", resonse)
       //localstorage = {}
 
       localStorage.uid = response.headers.uid;
