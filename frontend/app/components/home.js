@@ -1,10 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import ajaxHelpers from '../utils/ajaxHelpers';
-<<<<<<< HEAD
 import MapGS from './Map';
-=======
->>>>>>> 65d33ab169bafc2b3e020a18cad58d150501348f
 // import SearchName from './SearchName';
 
 // import Filters from './Filters';
