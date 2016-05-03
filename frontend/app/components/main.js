@@ -2,8 +2,11 @@ import React from 'react';
 import Nav from './Nav';
 import LandingPage from './LandingPage';
 
+
 const Main = React.createClass({
-  render: function() {
+
+  render:function(){
+
     return (
       <div>
       <div className="LandingPage">
@@ -11,6 +14,7 @@ const Main = React.createClass({
       </div>
       <div className="main-container">
         <Nav />
+
         {this.props.children}
       </div>
       </div>

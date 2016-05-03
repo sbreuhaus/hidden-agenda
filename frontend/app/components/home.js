@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import MapGS from './Map';
 
+
 // import SearchName from './SearchName';
 
 // import Filters from './Filters';
@@ -13,6 +14,8 @@ import Nav from './Nav';
 var url = 'http://localhost:3000/';
 
 const Home = React.createClass({
+
+
   clickConfirm: function(){
     console.log('this worked!')
 
