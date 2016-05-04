@@ -42,6 +42,18 @@ const Home = React.createClass({
   }
 },
 
+handleGeoReverse: function(){
+  // runs after ui renders
+  axios.get('http://api.tiles.mapbox.com/v3/{mapbox.streets}/geocode/' + marker.getLatLng() + '.json')
+  .then(function(response){
+    console.log("Did Mount", response);
+    console.log(this);
+  }.bind(this))
+  .catch(function(err){
+    // good practice to add to promise chains
+    console.warn('Error in ');
+  })
+},
 
 componentDidMount: function() {
   ajaxHelpers.getResults().then(function(response){
@@ -56,6 +68,7 @@ render: function(){
   return(
     <div>
       <MapGS />
+      <MapBtn Pics={this.handleGeoReverse()}
       <DisplayResults photos={this.state.ajaxReturn} />
     </div>
     )

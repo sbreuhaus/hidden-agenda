@@ -10,7 +10,6 @@ import LandingPage from '../components/LandingPage';
 
 const routes = (
 <Router history={hashHistory}>
-
   <Route path='/' component={Main}>
     <IndexRoute component={Home} />
     <Route path='About' component={About} />
