@@ -5,12 +5,11 @@ const MapGS = React.createClass({
 
   handleMapDisplay(){
     navigator.geolocation.getCurrentPosition(function(position) {
-    console.log("user latitude" + position.coords.latitude);
-    console.log("user longitude" + position.coords.longitude);
     let userLat = position.coords.latitude;
     let userLong = position.coords.longitude;
     L.mapbox.accessToken = APIk.mapBox;
-    Window.map = L.mapbox.map('map', 'mapbox.streets').setView(([userLat, userLong]||[40.7527, -73.9772]), 13);
+    Window.map = L.mapbox.map('map', 'mapbox.streets')
+    .setView(([userLat, userLong]||[40.7527, -73.9772]), 13)
     let marker = L.marker([userLat, userLong], {
       icon: L.mapbox.marker.icon({
         'marker-color': '#fa0',
@@ -20,22 +19,22 @@ const MapGS = React.createClass({
     }).addTo(Window.map);
     marker.on('dragend', ondragend);
 
-    // Set the initial marker coordinate on load.
     ondragend();
 
     function ondragend() {
         var m = marker.getLatLng();
         console.log(m)
-    }
+        }
       })
     },
+
     render: function() {
 
     const mapStyle = {
-      width: '50%',
-      height: '300px',
-      // zIndex: '-4000',
-      // position: 'fixed',
+      width: '100vw',
+      height: '65vw',
+      zIndex: '-4000',
+      position: 'fixed',
       border: "0",
       padding: "0"
     }
