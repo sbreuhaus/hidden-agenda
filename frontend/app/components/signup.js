@@ -2,6 +2,7 @@ import React from 'react';
 import {Router, Route, Link, browserHistory, IndexRoute, withRouter} from 'react-router';
 import auth from './auth';
 import ajaxHelpersAuth from '../utils/ajaxHelpersAuth';
+import Nav from './Nav';
 
 const Signup = React.createClass({
   getInitialState: function() {
@@ -45,7 +46,7 @@ const Signup = React.createClass({
     if (isLoggedIn) {
       return (
         <div>
-          <p>You are logged in!</p>
+          <Nav />
         </div>
       )
     }
