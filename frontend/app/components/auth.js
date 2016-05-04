@@ -15,18 +15,19 @@ module.exports = {
       password: password
     })
     .then(function (response) {
-      console.log("sign_in:", resonse)
+      console.log("sign_in:", response)
       //localstorage = {}
 
       localStorage.uid = response.headers.uid;
-      localStorage.accessToken = response.header['access-token'];
-      localStorage.headers.client = response.headers.client;
+      localStorage.accessToken = response.headers["access-token"];
+      localStorage.client = response.headers.client;
 
       if (afterLoginFxn) {
         afterLoginFxn(true)
       }
     })
     .catch(function (response){
+      // we failed to login
       console.log('There was an error:', response);
       if (afterLoginFxn) {
         afterLoginFxn(false);
