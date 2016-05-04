@@ -18,12 +18,10 @@ export default function SimpleMap (props) {
           <GoogleMap
             ref={(map) => console.log(map)}
             defaultZoom={3}
-            defaultCenter={{lat: -25.363882, lng: 131.044922}}
+            defaultCenter={{lat: -25.363882, lng: 131.044922}}>
           </GoogleMap>
         }
       />
 
   );
 }
-
-export default SimpleMap;

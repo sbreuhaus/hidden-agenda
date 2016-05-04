@@ -55,11 +55,8 @@ componentDidMount: function() {
 render: function(){
   return(
     <div>
-
       <MapGS />
-
       <DisplayResults photos={this.state.ajaxReturn} />
-
     </div>
     )
   }
