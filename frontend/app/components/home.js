@@ -46,6 +46,7 @@ const Home = React.createClass({
 
 
 componentDidMount: function() {
+  console.log('componentDidMount')
   ajaxHelpers.getResults()
   .then(function(response){
     console.log(response);

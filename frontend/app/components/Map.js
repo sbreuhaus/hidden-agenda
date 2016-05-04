@@ -32,9 +32,10 @@ const MapGS = React.createClass({
     render: function() {
 
     const mapStyle = {
-      width: '100vw',
-      height: '65vw',
-      zIndex: '-4000',
+      width: '50%',
+      height: '300px',
+      // zIndex: '-4000',
+      // position: 'fixed',
       border: "0",
       padding: "0"
     }
