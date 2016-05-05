@@ -4,6 +4,7 @@ const MapBtn = React.createClass({
 
   handleMapAjax:function(e){
     console.log("Search by map marker!!");
+    
   },
 
   render:function(){

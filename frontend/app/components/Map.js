@@ -6,6 +6,8 @@ const MapGS = React.createClass({
 
   handleMapDisplay(){
     navigator.geolocation.getCurrentPosition(function(position) {
+    console.log("user latitude" + position.coords.latitude);
+    console.log("user longitude" + position.coords.longitude);
     let userLat = position.coords.latitude;
     let userLong = position.coords.longitude;
     L.mapbox.accessToken = APIk.mapBox;
@@ -29,6 +31,7 @@ const MapGS = React.createClass({
     function ondragend() {
         var m = marker.getLatLng();
         console.log(m)
+
         }
       })
     },
