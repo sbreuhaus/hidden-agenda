@@ -10,7 +10,9 @@ const MapGS = React.createClass({
     let userLat = position.coords.latitude;
     let userLong = position.coords.longitude;
     L.mapbox.accessToken = APIk.mapBox;
-    Window.map = L.mapbox.map('map', 'mapbox.streets').setView(([userLat, userLong]||[40.7527, -73.9772]), 13);
+    Window.map = L.mapbox.map('map', 'mapbox.streets',{
+      zoomControl: true
+    }).setView(([userLat, userLong]||[40.7527, -73.9772]), 13);
     let marker = L.marker([userLat, userLong], {
       icon: L.mapbox.marker.icon({
         'marker-color': '#fa0',
@@ -19,6 +21,7 @@ const MapGS = React.createClass({
       draggable: true
     }).addTo(Window.map);
     marker.on('dragend', ondragend);
+    Window.map.scrollWheelZoom.disable();
 
     // Set the initial marker coordinate on load.
     ondragend();
@@ -32,12 +35,13 @@ const MapGS = React.createClass({
     render: function() {
 
     const mapStyle = {
-      width: '50%',
+      width: '100%',
       height: '300px',
       // zIndex: '-4000',
       // position: 'fixed',
       border: "0",
-      padding: "0"
+      padding: "0",
+
     }
     return(
       <div>
