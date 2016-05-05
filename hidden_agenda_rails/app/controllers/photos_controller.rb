@@ -18,11 +18,12 @@ class PhotosController < ApplicationController
       render json: {error: "photo agenda could not be created."}, status: 422
     end
   end
+
   #delete
-  def destory
+  def destroy
     @photo = Photo.find( params[:id])
   ​
-    if @photo.destory
+    if @photo.destroy
       render json: {}, status: 200
     else
       render json: {error: 'could not delete photo'}, stauts: 422
