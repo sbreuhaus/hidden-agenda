@@ -1,12 +1,11 @@
 import React from 'react';
 import APIk from '../utils/key';
+import MapBtn from './MapBtn'
 
 const MapGS = React.createClass({
 
   handleMapDisplay(){
     navigator.geolocation.getCurrentPosition(function(position) {
-    console.log("user latitude" + position.coords.latitude);
-    console.log("user longitude" + position.coords.longitude);
     let userLat = position.coords.latitude;
     let userLong = position.coords.longitude;
     L.mapbox.accessToken = APIk.mapBox;
@@ -30,13 +29,13 @@ const MapGS = React.createClass({
     function ondragend() {
         var m = marker.getLatLng();
         console.log(m)
-    }
+        }
       })
     },
     render: function() {
 
     const mapStyle = {
-      width: '50%',
+      width: '100%',
       height: '300px',
       // zIndex: '-4000',
       // position: 'fixed',
@@ -49,6 +48,7 @@ const MapGS = React.createClass({
           {this.handleMapDisplay()}
         </div>
         <pre id='coordinates'></pre>
+        <MapBtn/>
       </div>
     )
   }
