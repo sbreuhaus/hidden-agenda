@@ -2,11 +2,6 @@ import React from 'react';
 import {Link} from 'react-router';
 
 
-function DisplayResults(props){
-  const TravelPics = props.photos.map((photos) => {
-    return<div key={photos.id} className='photo'>
-        <img src={"https://farm" + photos.farm + ".staticflickr.com/" + photos.server + "/" + photos.id + "_" + photos.secret + ".jpg"} />
-    </div>
 
 const DisplayResults = React.createClass({
   getIntitialState: function(){
