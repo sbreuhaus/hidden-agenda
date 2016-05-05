@@ -8,5 +8,5 @@
 Photo.delete_all
 
 Photo.create!([
-  {id: 1, user_id: 1, photo_url: 'https://farm8.staticflickr.com/7733/26544615200_9be9c798a1.jpg', search_name: "barcelona", description: "located in Spain"}
+  {id: 1, photo_url: 'https://farm8.staticflickr.com/7733/26544615200_9be9c798a1.jpg', search_name: "barcelona", user_id: 1, description: "located in Spain"}
 ])

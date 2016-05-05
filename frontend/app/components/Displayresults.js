@@ -9,27 +9,23 @@ const DisplayResults = React.createClass({
       description: ''
     }
   },
-  onSavePhoto: function(e){
+  onSavePhoto: function(photo){
     console.log('onClick worked');
-    console.log(this);
-
-    const agenda = {
-      photo_url: this.state.photo_url,
-      search_name: this.state.search_name,
-      description: this.state.description
-    };
+    console.log(photo);
     ajaxHelpers.addAgenda(agenda)
     .then(function(response){
       console.log("response",response)
     });
   },
 
+
+
   render: function() {
-    const TravelPics = this.props.photos.map((photo) => {
-      return<div key={photo.id} className='photo'>
-        <img onClick={this.onSavePhoto.bind(this, photo)} src={"https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg"} />
-      </div>
-    });
+    const TravelPics = this.props.photos.map(function(photo){
+          return <div key={photo.id} className='photo'>
+              <img onClick={this.onSavePhoto.bind(this, photo)} src={"https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg"} />
+          </div>
+        }.bind(this));
 
     return (
       <div>
