@@ -1,8 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router';
-import ajaxHelpers from '../utils/ajaxHelpers';
-
-
 
 const DisplayResults = React.createClass({
   getIntitialState: function(){

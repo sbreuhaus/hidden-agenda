@@ -20,7 +20,7 @@ const Home = React.createClass({
     console.log('this worked!')
   },
 
-  getIntitialState: function() {
+  getInitialState: function() {
     return{
       ajaxReturn: [],
       searchName: ''
