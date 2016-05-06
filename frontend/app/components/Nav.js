@@ -57,7 +57,7 @@ const Nav = React.createClass({
                    <li><Link to="/About"><span>About</span></Link></li>
                  <li className='last'><a href='mailto:hiddenagendawdi@yahoo.com'><span>Contact us</span></a></li>
                    <li><Link to="/Signup"><span>Signup</span></Link></li>
-                   <li><Link to="/SaveAgenda"><span>Save Agenda</span></Link></li>
+                   <li><Link to="/AgendaComponent"><span>Save Agenda</span></Link></li>
                    <li>
                      <div className='useridinput'>
                        <button onClick={ () => this.handleLogout() }>Logout</button>
