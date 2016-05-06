@@ -5,7 +5,7 @@ const MapBtn = React.createClass({
 
   render:function(){
     return(
-      <button onClick={this.handleMapAjax}>Search by Map</button>
+      <button onClick={this.props.onSubmitMap}>Search by Map</button>
     )
   }
 })

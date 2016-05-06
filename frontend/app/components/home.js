@@ -34,16 +34,6 @@ const Home = React.createClass({
     })
   },
 
-  onSubmit: function() {
-  console.log("onSubmit was called!");
-
-
-  var travelSearch = {};
-  if (this.state.searchName) {
-    travelSearch.name = this.state.searchName;
-  }
-},
-
 
 handleSubmit: function() {
   console.log("HANDLESUBMIT");

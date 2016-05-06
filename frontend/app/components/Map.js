@@ -1,8 +1,16 @@
 import React from 'react';
 import APIk from '../utils/key';
-import MapBtn from './MapBtn'
+import ajaxHelpers from '../utils/ajaxHelpers';
 
 const MapGS = React.createClass({
+
+  getInitialState:function(){
+    return {
+      ajaxReturnMap: [],
+      lat: '',
+      lng: ''
+    }
+  },
 
   handleMapDisplay(){
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -26,18 +34,31 @@ const MapGS = React.createClass({
 
 
     // Set the initial marker coordinate on load.
-    ondragend();
+    ondragend()
+
 
     function ondragend() {
-        var m = marker.getLatLng();
-        console.log(m)
-        this.setState({
-          latlng: marker.getLatLng()
-        })
-        console.log("HERE'S THE SHIT", this.state.latlng);
-        }
-      })
-    },
+      var m = marker.getLatLng();
+      console.log('marker location: ', m.lat, m.lng)
+      let lat = m.lat;
+      let lng = m.lng;
+      ajaxHelpers.getMapResults(lat, lng)
+      .then(function(response){
+        console.log("this is the response", response);
+        let cityName = response.data.places.place[0].woe_name;
+        console.log("this is cityname", cityName)
+        ajaxHelpers.getResults(cityName)
+        .then(function(res){
+          console.log("this is photo by cityname", res);
+          this.setState({
+            ajaxReturnMap: response.data.photos.photo
+          });
+        }.bind(this));
+     });
+    }
+  })
+ },
+
     render: function() {
 
     const mapStyle = {
@@ -47,15 +68,14 @@ const MapGS = React.createClass({
       // position: 'fixed',
       border: "0",
       padding: "0",
-
     }
+
     return(
       <div>
         <div id='map' className='map' style={mapStyle}>
           {this.handleMapDisplay()}
         </div>
         <pre id='coordinates'></pre>
-        <MapBtn/>
       </div>
     )
   }
