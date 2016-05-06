@@ -19,7 +19,7 @@ const AgendaComponent = React.createClass({
   render: function() {
     const AgendaPics = this.state.agenda.map(function(photo){
           return <div key={photo.id} className='photo'>
-              <img onClick={this.onSavePhoto.bind(this, photo)} src={"https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.photo_id + "_" + photo.secret + ".jpg"} />
+              <img src={"https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.photo_id + "_" + photo.secret + ".jpg"} />
           </div>
         }.bind(this));
 
