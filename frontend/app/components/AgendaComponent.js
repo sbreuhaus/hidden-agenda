@@ -2,22 +2,33 @@ import React from 'react';
 import ajaxHelpers from '../utils/ajaxHelpers';
 
 const AgendaComponent = React.createClass({
-  addAgenda: function(){
 
-    let agenda = {
-      photo_url: this.props.photo_url
-    }
 
-    ajaxHelpers.addAgenda(agenda)
+  componentDidMount:function(){
+
+    ajaxHelpers.getUserAgenda()
     .then(function(response){
-      console.log('logging response after adding agenda', response.data.ops[0]['id']);
+      console.log('logging response after getting users agenda', response.data);
       this.setState({
-        id: response.data.ops[0]['id']
+        agenda: response.data
       })
-      console.log("Mongo ID for song:", this.state.id);
+      console.log(this.state.agenda);
     }.bind(this))
   },
 
-render: function(){
+  render: function() {
+    const AgendaPics = this.state.agenda.map(function(photo){
+          return <div key={photo.id} className='photo'>
+              <img onClick={this.onSavePhoto.bind(this, photo)} src={"https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.photo_id + "_" + photo.secret + ".jpg"} />
+          </div>
+        }.bind(this));
 
-})
+        return (
+          <div>
+            {AgendaPics}
+          </div>
+        );
+      }
+    });
+
+  export default AgendaComponent;
