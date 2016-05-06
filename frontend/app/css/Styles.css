@@ -28,15 +28,10 @@ padding: 20px;
   margin: 15%;
   overflow: auto;
   background: cover;
-
   border-width: 1px;
-<<<<<<< HEAD
   border: solid;
   border-color: #363636;
-=======
-border: solid;
-border-color: #363636;
->>>>>>> 676cef8f388680acb6fc65142e4183b30210acf7
+
 }
 .useridinput {
   background-color: white;
@@ -166,12 +161,10 @@ border-color: #363636;
 }
 
 .map {
-<<<<<<< HEAD
-=======
-
 
   align-items: center;
   justify-content: center;
+  margin-top: -20px;
 }
 
 .Submit {
@@ -180,7 +173,6 @@ border-color: #363636;
 }
 .Submit input {
 	outline: none;
->>>>>>> 676cef8f388680acb6fc65142e4183b30210acf7
   align-items: center;
   justify-content: center;
 }

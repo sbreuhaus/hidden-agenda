@@ -31,7 +31,10 @@ const MapGS = React.createClass({
     function ondragend() {
         var m = marker.getLatLng();
         console.log(m)
-
+        this.setState({
+          latlng: marker.getLatLng()
+        })
+        console.log("HERE'S THE SHIT", this.state.latlng);
         }
       })
     },
