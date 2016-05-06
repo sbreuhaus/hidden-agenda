@@ -23,14 +23,14 @@ const Home = React.createClass({
   getInitialState: function() {
     return{
       ajaxReturn: [],
-      searchName: ''
+      cityName: ''
     };
   },
 
   onChangeName: function(e) {
     console.log('Searching!');
     this.setState({
-      searchName: e.target.value
+      cityName: e.target.value
     })
   },
 
@@ -45,8 +45,10 @@ const Home = React.createClass({
 },
 
 
-componentDidMount: function() {
-  ajaxHelpers.getResults()
+handleSubmit: function() {
+  console.log("HANDLESUBMIT");
+  let cityName = this.state.cityName;
+  ajaxHelpers.getResults(cityName)
   .then(function(response){
     console.log(response);
     this.setState({
@@ -60,8 +62,9 @@ render: function(){
     <div>
       <Map />
       <SearchName onChangeName={this.onChangeName}
-                  onSubmit={this.onSubmit}
+                  onSubmit={this.handleSubmit}
         />
+
       <DisplayResults photos={this.state.ajaxReturn} />
     </div>
     )

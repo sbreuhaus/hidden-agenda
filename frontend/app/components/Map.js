@@ -43,7 +43,8 @@ const MapGS = React.createClass({
       // zIndex: '-4000',
       // position: 'fixed',
       border: "0",
-      padding: "0"
+      padding: "0",
+
     }
     return(
       <div>

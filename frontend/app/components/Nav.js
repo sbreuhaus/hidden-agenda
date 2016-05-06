@@ -2,6 +2,7 @@ import React from 'react';
 import {Router, Route, Link, browserHistory, IndexRoute, withRouter} from 'react-router';
 import auth from './auth';
 import ajaxHelpersAuth from '../utils/ajaxHelpersAuth';
+import {Navbar, NavItem} from 'react-materialize';
 
 const Nav = React.createClass({
   getInitialState: function() {
@@ -50,18 +51,19 @@ const Nav = React.createClass({
     if (isLoggedIn) {
       return (
         <div className='cssmenu'>
-          <h1>Hidden Agenda</h1>
+
           <div className='menu'>
-              <ul>
-                 <li><Link to="/About"><span>About</span></Link></li>
+<ul>
+                   <li><Link to="/About"><span>About</span></Link></li>
                  <li className='last'><a href='mailto:hiddenagendawdi@yahoo.com'><span>Contact us</span></a></li>
                    <li><Link to="/Signup"><span>Signup</span></Link></li>
+                   <li><Link to="/SaveAgenda"><span>Save Agenda</span></Link></li>
                    <li>
                      <div className='useridinput'>
                        <button onClick={ () => this.handleLogout() }>Logout</button>
                       </div>
                     </li>
-              </ul>
+    </ul>
             </div>
         </div>
       )
