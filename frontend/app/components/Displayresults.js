@@ -13,7 +13,20 @@ const DisplayResults = React.createClass({
   onSavePhoto: function(photo){
     console.log('onClick worked');
     console.log(photo);
-    ajaxHelpers.addAgenda(photo)
+
+    const photo_rails = {
+      isfamily: photo.isfamily,
+      ispublic: photo.ispublic,
+      isfriend: photo.isfriend,
+      server: photo.server,
+      secret: photo.secret,
+      title: photo.title,
+      owner: photo.owner,
+      farm: photo.farm,
+      photo_id: photo.id
+    }
+
+    ajaxHelpers.addAgenda(photo_rails)
     .then(function(response){
       console.log("response",response)
     });
