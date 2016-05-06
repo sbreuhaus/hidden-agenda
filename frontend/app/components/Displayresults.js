@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import ajaxHelpers from '../utils/ajaxHelpers';
 
 const DisplayResults = React.createClass({
   getIntitialState: function(){
@@ -12,7 +13,7 @@ const DisplayResults = React.createClass({
   onSavePhoto: function(photo){
     console.log('onClick worked');
     console.log(photo);
-    ajaxHelpers.addAgenda(agenda)
+    ajaxHelpers.addAgenda(photo)
     .then(function(response){
       console.log("response",response)
     });

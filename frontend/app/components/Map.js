@@ -1,5 +1,6 @@
 import React from 'react';
 import APIk from '../utils/key';
+import MapBtn from './MapBtn'
 
 const MapGS = React.createClass({
 
@@ -23,13 +24,18 @@ const MapGS = React.createClass({
     marker.on('dragend', ondragend);
     Window.map.scrollWheelZoom.disable();
 
+
     // Set the initial marker coordinate on load.
     ondragend();
 
     function ondragend() {
         var m = marker.getLatLng();
         console.log(m)
-    }
+        this.setState({
+          latlng: marker.getLatLng()
+        })
+        console.log("HERE'S THE SHIT", this.state.latlng);
+        }
       })
     },
     render: function() {
@@ -49,6 +55,7 @@ const MapGS = React.createClass({
           {this.handleMapDisplay()}
         </div>
         <pre id='coordinates'></pre>
+        <MapBtn/>
       </div>
     )
   }

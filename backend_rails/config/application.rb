@@ -28,8 +28,8 @@ module BackendRails
         resource '*',
           :headers => :any,
           :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
-          :methods => [:get, :post, :options, :delete, :put]
+          :methods => :any
       end
-    end    
+    end
   end
 end
