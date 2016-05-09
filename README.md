@@ -15,4 +15,4 @@ Ruby on rails,
 Devise (rails gem for user-auth) 
 
 #Team 
-Stephen Breuhaus, Sun Jin Lee and Sumit Bhasin 
+Stephen Breuhaus, Sung Jin Lee and Sumit Bhasin 
