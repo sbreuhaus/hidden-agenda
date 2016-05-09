@@ -34,24 +34,10 @@ const Home = React.createClass({
     })
   },
 
-
-<<<<<<< HEAD
-
-  var travelSearch = {};
-  if (this.state.searchName) {
-    travelSearch.name = this.state.searchName;
-  }
-},
-
-
-componentDidMount: function() {
-  ajaxHelpers.getResults()
-=======
 handleSubmit: function() {
   console.log("HANDLESUBMIT");
   let cityName = this.state.cityName;
   ajaxHelpers.getResults(cityName)
->>>>>>> sungfolder
   .then(function(response){
     console.log(response);
     this.setState({
