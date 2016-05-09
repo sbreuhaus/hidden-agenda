@@ -1,5 +1,7 @@
 body {
-  background: url(http://blog.hostbaby.com/wp-content/uploads/2013/07/scuffedstatic_dark1400x900.jpg) no-repeat center center fixed;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: url(http://www.softheme.com/wp-content/themes/twentyten/images/background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -26,18 +28,35 @@ padding: 20px;
   overflow: auto;
   background: cover;
 
-  border-width: thick;
-  border: solid;
-  border-color: white;
+  border-width: 1px;
+border: solid;
+border-color: #363636;
 }
 .useridinput {
-  background-color: white;
+display: flex;
+float: right;
+}
+.loginbutton {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.aboutus p {
+
+  justify-content: center;
+  text-align: center;
+}
+.aboutus img{
+margin-left: 23%;
+}
+.searchbyname {
+  padding: 20px;
 }
 .cssmenu h1 {
   color: white;
 }
 .cssmenu {
-  background: grey;
+  background: #db1f47;
   width: auto;
   text-align: left;
 }
@@ -72,7 +91,7 @@ padding: 20px;
   color: #ffffff;
   text-decoration: none;
   display: block;
-  padding: 15px 25px;
+  padding: 7px 27px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -158,16 +177,87 @@ padding: 20px;
 }
 
 .map {
+<<<<<<< HEAD
   margin-top: 20px;
   margin-left: 25%;
+=======
+
+
+>>>>>>> sungfolder
   align-items: center;
   justify-content: center;
 }
 
+<<<<<<< HEAD
+=======
+.Submit {
+  display: block;
+  margin: 0 auto;
+}
+.Submit input {
+	outline: none;
+  align-items: center;
+  justify-content: center;
+}
+.Submit input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+.Submit input::-webkit-search-decoration,
+ .Submit input::-webkit-search-cancel-button {
+	display: none;
+}
+
+
+.Submit input[type=search] {
+	background: #ededed url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 55px;
+
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+.Submit input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: #66CC75;
+
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+.Submit input:-moz-placeholder {
+	color: #999;
+}
+.Submit input::-webkit-input-placeholder {
+	color: #999;
+}
+
+
+
+
+>>>>>>> sungfolder
 .photo {
   display: inline-block;
   padding: 20px;
   margin-left: 20px;
   /*float: right;*/
 
+<<<<<<< HEAD
+=======
+}
+
+.signupform {
+  padding: 40px;
+>>>>>>> sungfolder
 }

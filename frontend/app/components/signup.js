@@ -3,6 +3,7 @@ import {Router, Route, Link, browserHistory, IndexRoute, withRouter} from 'react
 import auth from './auth';
 import ajaxHelpersAuth from '../utils/ajaxHelpersAuth';
 import Nav from './Nav';
+import {Navbar, Navitem, Input, Row, Button} from 'react-materialize';
 
 const Signup = React.createClass({
   getInitialState: function() {
@@ -52,11 +53,11 @@ const Signup = React.createClass({
     }
 
     return (
-      <div>
+      <div className='signupform'>
         <input placeholder='email' type='email' name='email' onChange={ e => this.setState({email: e.target.value})}/>
         <input placeholder='password' type='password' name='password' onChange={e => this.setState({password: e.target.value})} />
         <input placeholder='password confirmation' type='password' name='passwordConfirm' onChange={ e => this.setState({passwordConfirmation: e.target.value})} />
-        <button onClick={ () => this.handleSignup() }>Submit</button>
+        <Button onClick={ () => this.handleSignup() }>Submit</Button>
         <p>Already have an account?</p>
         <Link to={'/'}>Home</Link>
         <p>{this.state.successMsg}</p>

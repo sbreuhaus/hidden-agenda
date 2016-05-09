@@ -2,6 +2,7 @@ import React from 'react';
 import {Router, Route, Link, browserHistory, IndexRoute, withRouter} from 'react-router';
 import auth from './auth';
 import ajaxHelpersAuth from '../utils/ajaxHelpersAuth';
+import {Navbar, NavItem, Input, Row, Button} from 'react-materialize';
 
 const Nav = React.createClass({
   getInitialState: function() {
@@ -50,39 +51,41 @@ const Nav = React.createClass({
     if (isLoggedIn) {
       return (
         <div className='cssmenu'>
-          <h1>Hidden Agenda</h1>
           <div className='menu'>
-              <ul>
-                 <li><Link to="/About"><span>About</span></Link></li>
-                 <li className='last'><a href='mailto:hiddenagendawdi@yahoo.com'><span>Contact us</span></a></li>
-                   <li><Link to="/Signup"><span>Signup</span></Link></li>
-                   <li>
-                     <div className='useridinput'>
-                       <button onClick={ () => this.handleLogout() }>Logout</button>
-                      </div>
-                    </li>
-              </ul>
-            </div>
+            <ul>
+             <li><Link to='/'><span>Home</span></Link></li>
+             <li><Link to="/About"><span>About</span></Link></li>
+             <li className='last'><a href='mailto:hiddenagendawdi@yahoo.com'><span>Contact us</span></a></li>
+             <li><Link to="/AgendaComponent"><span>Save Agenda</span></Link></li>
+             <li>
+               <div className='useridinput'>
+                 <Button onClick={ () => this.handleLogout() }>Logout</Button>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       )
     }
 
     return(
       <div className='cssmenu'>
-        <h1>Hidden Agenda</h1>
         <div className='menu'>
-          <ul>
-             <li><Link to="/About"><span>About</span></Link></li>
-             <li className='last'><a href='mailto:hiddenagendawdi@yahoo.com'><span>Contact us</span></a></li>
-             <li><Link to="/Signup"><span>Signup</span></Link></li>
-               <li>
-                 <div className='useridinput'>
-                  <input placeholder='email' name='email' onChange={ e => this.setState({email: e.target.value})}/>
-                  <input placeholder='password' type='password' name='password' onChange={ e => this.setState({password: e.target.value})}/>
-                  <button onClick={ () => this.handleLogin() }>Submit</button>
-                </div>
-              </li>
-          </ul>
+        <ul>
+         <li><Link to='/'><span>Home</span></Link></li>
+         <li><Link to="/About"><span>About</span></Link></li>
+         <li className='last'><a href='mailto:hiddenagendawdi@yahoo.com'><span>Contact us</span></a></li>
+         <li><Link to="/Signup"><span>Signup</span></Link></li>
+        </ul>
+        <div className='useridinput'>
+          <Row>
+            <Input placeholder='email' name='email' onChange={ e => this.setState({email: e.target.value})}/>
+            <Input placeholder='password' type='password' name='password' onChange={ e => this.setState({password: e.target.value})}/>
+          </Row>
+            <div className='loginbutton'>
+              <Button onClick={ () => this.handleLogin() }>Submit</Button>
+            </div>
+          </div>
         </div>
       </div>
     );
